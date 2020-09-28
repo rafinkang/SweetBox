@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+It's new file
+hahahahhah
+=======
 가나다라마바사
 
 내가 더 빨리 올렸지롱
@@ -5,3 +9,4 @@
 메롱메롱
 
 ㅋ
+>>>>>>> b38c935e9fe0b5e117e78cdfac7571df35058eca
