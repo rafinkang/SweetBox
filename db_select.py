@@ -8,7 +8,7 @@ db = DbConn()
 
 sql = """
 SELECT *
-FROM RESTAURANT
+FROM BOXOFFICE
 """
 
 result = db.execute(sql)
