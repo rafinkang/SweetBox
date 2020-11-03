@@ -27,6 +27,9 @@ def insert_boxoffice(showrange):
     for i in dailyBoxOfficeList: # 하루에 1위~10위 데이터 들어있음
         salesInten = i['salesInten']
         openDt = i['openDt']
+        if len(openDt) < 3:
+            continue
+
         audiInten = i['audiInten']
         rnum = i['rnum']
         movieCd = i['movieCd']
@@ -74,6 +77,8 @@ def insert_boxoffice(showrange):
         # else :
         #     print(showRange, movieNm,'는 안대요 안대~!')
     print(showrange, "작업 완료. -----")
+    db.disconnect()
+
 
 
 
@@ -96,8 +101,9 @@ def make_date(start_date, end_date):
     return str_date_list
 
 
-dateList = make_date('20180101', '20180201')
+dateList = make_date('20180916', '20190101')
 
 for m_date in dateList:
     insert_boxoffice(m_date)
 
+# print(dateList)
