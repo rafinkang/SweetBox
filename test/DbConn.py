@@ -1,8 +1,12 @@
+#-*- coding:utf-8 -*-
 import cx_Oracle
-""" 
-민수 DB
-orcl.czq0cxsnbcns.ap-northeast-2.rds.amazonaws.com, orcl, scott, tigertiger, 1521
-""" 
+import os 
+
+os.environ["NLS_LANG"] = ".AL32UTF8"
+#""" 
+# 민수 DB
+# orcl.czq0cxsnbcns.ap-northeast-2.rds.amazonaws.com, orcl, scott, tigertiger, 1521
+# """ 
 
 class DbConn:
     def __init__(
