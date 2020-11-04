@@ -101,7 +101,7 @@ def make_date(start_date, end_date):
     return str_date_list
 
 
-dateList = make_date('20180916', '20190101')
+dateList = make_date('20141001', '20150101')
 
 for m_date in dateList:
     insert_boxoffice(m_date)
