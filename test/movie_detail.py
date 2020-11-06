@@ -7,7 +7,17 @@ from DbConn import *
 from datetime import datetime, timedelta
 
 MOVIE_DETAIL_URL='http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json'
-API_SE_KEYS='de94fab2e7564e8d9c7a4e43a6a452ba'
+# 민수 
+# API_KEY = "d9dbe114c7c43200437493cbcb36ee74"
+# 태욱
+# API_KEY = "ef0d1cc93bc2ef58555e96b5dd6af1e4"
+# 성은
+API_KEY = "de94fab2e7564e8d9c7a4e43a6a452ba"
+# 문정
+# API_KEY = "115e6f48c454984e7ac6975401bd9544"
+# API_KEY = "13891b89e385e48aa8433f01dc61d577"
+# API_KEY = "c8fc5344160dbc22af948de275908b90"
+# API_KEY = "1f7ced99b26cb1c06c18e6fe86d22308"
 
 def insert_moviedetail(moviecd):
     db = DbConn()
@@ -98,7 +108,9 @@ def insert_moviedetail(moviecd):
 
 def movie_detail(year):
     db = DbConn()
-    cd_list = db.execute("select moviecd from boxoffice where showrange like '"+str(year)+"%' group by moviecd")
+    sql = "select moviecd from boxoffice2 where dailydate between TO_DATE('"+str(year)+"/01/01', 'YYYY/MM/DD') and TO_DATE('"+str(year)+"/12/31', 'YYYY/MM/DD') group by moviecd"
+    print(sql)
+    cd_list = db.execute(sql)
     db.disconnect()
 
     for movie_cd in cd_list:
@@ -106,4 +118,6 @@ def movie_detail(year):
 
     print(len(cd_list),"개 인서트 끝~~~~")
 
-movie_detail(2019)
+for i in range(2000,2020):
+    movie_detail(i)
+# movie_detail(2019)
