@@ -7,7 +7,13 @@ from datetime import date, datetime, timedelta
 # API_KEY = "d9dbe114c7c43200437493cbcb36ee74"
 # 태욱
 API_KEY = "ef0d1cc93bc2ef58555e96b5dd6af1e4"
-
+# 성은
+# API_KEY = "de94fab2e7564e8d9c7a4e43a6a452ba"
+# 문정
+# API_KEY = "115e6f48c454984e7ac6975401bd9544"
+# API_KEY = "13891b89e385e48aa8433f01dc61d577"
+# API_KEY = "c8fc5344160dbc22af948de275908b90"
+# API_KEY = "1f7ced99b26cb1c06c18e6fe86d22308"
 
 
 BOX_OFFICE_URL = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json"
@@ -27,7 +33,7 @@ def insert_boxoffice(showrange):
     (dailydate, rnum, mrank, rankinten, rankoldandnew, moviecd, movienm, opendt, salesamt, salesshare, salesinten, saleschange, salesacc, audicnt, audiinten, audichange, audiacc, scrncnt, showcnt)
     VALUES (TO_DATE(:dailydate, 'YYYY-MM-DD'), :rnum, :mrank, :rankinten, :rankoldandnew, :moviecd, :movienm, TO_DATE(:opendt, 'YYYY-MM-DD'), :salesamt, :salesshare, :salesinten, :saleschange, :salesacc, :audicnt, :audiinten, :audichange, :audiacc, :scrncnt, :showcnt)
     """
-    select_query = "SELECT * FROM BOXOFFICE2 WHERE dailydate = :dailydate AND MOVIECD = :MOVIECD"
+    select_query = "SELECT * FROM BOXOFFICE2 WHERE dailydate = TO_DATE(:dailydate, 'YYYY-MM-DD') AND MOVIECD = :MOVIECD"
 
 
     for i in dailyBoxOfficeList: # 하루에 1위~10위 데이터 들어있음
@@ -90,14 +96,11 @@ def make_date(start_date, end_date):
 
 
 
-
-dateList = make_date('20190101', '20200101')
+# 날짜 잘 정해서 하세요.
+dateList = make_date('20160101', '20180101')
 
 
 for m_date in dateList:
     insert_boxoffice(m_date)
-
-
-
-# print(dateList)
-# insert_boxoffice('20201105')
+    
+    
