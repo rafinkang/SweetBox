@@ -22,7 +22,7 @@ API_KEY = "de94fab2e7564e8d9c7a4e43a6a452ba"
 def insert_moviedetail(moviecd):
     db = DbConn()
     
-    url = MOVIE_DETAIL_URL+'?key='+API_SE_KEYS+'&movieCd='+str(moviecd)
+    url = MOVIE_DETAIL_URL+'?key='+API_KEY+'&movieCd='+str(moviecd)
     data = requests.get(url).json()
 
     movie_info_list = data['movieInfoResult']['movieInfo']
@@ -118,6 +118,6 @@ def movie_detail(year):
 
     print(len(cd_list),"개 인서트 끝~~~~")
 
-for i in range(2000,2020):
-    movie_detail(i)
-# movie_detail(2019)
+# for i in range(2015,2018):
+#     movie_detail(i)
+movie_detail(2018)
