@@ -2,6 +2,10 @@
 import cx_Oracle
 import os 
 
+LOCATION = r"C:\Users\kimminsu\instantclient_19_8"
+os.environ["PATH"] = LOCATION + ";" + os.environ["PATH"]
+#os.environ["NLS_LANG"]="AMERICAN_AMERICA.AL32UTF8"
+
 os.environ["NLS_LANG"] = ".AL32UTF8"
 #""" 
 # 민수 DB
