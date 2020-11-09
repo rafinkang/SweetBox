@@ -2,11 +2,13 @@ import requests
 import json
 from DbConn import *
 from datetime import date, datetime, timedelta
+import re
+
 
 # 민수 
-# API_KEY = "d9dbe114c7c43200437493cbcb36ee74"
+API_KEY = "d9dbe114c7c43200437493cbcb36ee74"
 # 태욱
-API_KEY = "ef0d1cc93bc2ef58555e96b5dd6af1e4"
+# API_KEY = "ef0d1cc93bc2ef58555e96b5dd6af1e4"
 # 성은
 # API_KEY = "de94fab2e7564e8d9c7a4e43a6a452ba"
 # 문정
@@ -37,6 +39,14 @@ def insert_boxoffice(showrange):
 
 
     for i in dailyBoxOfficeList: # 하루에 1위~10위 데이터 들어있음
+        
+        p = re.compile('[0-9]')
+        movieCd_re = p.findall(i['movieCd'])
+        print(i['movieCd'], movieCd_re)
+        
+        if len(movieCd_re) != 8:
+            continue
+
         openDt = i['openDt']
         if len(openDt) < 3:
             continue
@@ -64,6 +74,7 @@ def insert_boxoffice(showrange):
         }
         # print(query_params)
         select_result = db.execute(select_query, {"dailydate": dailydate, "MOVIECD": i['movieCd']})
+
 
         if len(select_result) == 0:
             db.execute(insert_query, query_params)
@@ -97,10 +108,11 @@ def make_date(start_date, end_date):
 
 
 # 날짜 잘 정해서 하세요.
-dateList = make_date('20160101', '20180101')
+dateList = make_date('20000101', '20030101')
 
 
-for m_date in dateList:
-    insert_boxoffice(m_date)
+# for m_date in dateList:
+#     insert_boxoffice(m_date)
     
+insert_boxoffice('20110310')
     
