@@ -111,8 +111,9 @@ footer a:link, footer a:visited {
 }
 
 .tm-section {
-  margin-right: 75px;
+  /* margin-right: 75px; */
   max-width: 100%;
+  width: inherit;
 }
 
 .tm-section-title {
@@ -650,4 +651,11 @@ figure.effect-goliath:hover p {
 
 .tm-static {
   position: static;
+}
+
+
+/* amchart.js css */
+#chartdiv {
+  width: 100%;
+  height: 800px;
 }
