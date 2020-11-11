@@ -39,7 +39,7 @@ playButton.events.on("toggled", function(event) {
     }
 })
 
-var stepDuration = 2000;
+var stepDuration = 3000;
 
 var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
 categoryAxis.renderer.grid.template.location = 0;
