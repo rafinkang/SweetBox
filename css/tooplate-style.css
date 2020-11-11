@@ -88,8 +88,7 @@ footer a:link, footer a:visited {
 
 .tm-site-header-box {
   display: inline-block;
-  padding: 40px 80px 40px 40px;
-  margin: 40px 40px 100px;
+  margin: 10px;
 }
 
 .tm-site-title {
@@ -123,7 +122,7 @@ footer a:link, footer a:visited {
 }
 
 .tm-textbox {
-  padding: 45px;
+  padding: 30px;
   font-size: 1.1rem;
   color: #c5c7c6;
   line-height: 1.8;
@@ -659,4 +658,23 @@ figure.effect-goliath:hover p {
 #chartdiv {
   width: 100%;
   height: 800px;
+}
+
+
+#bgImage0{
+  background-position: center !important;
+  background-size: 1600px !important;
+  background-color: #fff;
+}
+
+#center{
+  margin:0 auto;
+  width: auto;
+  
+}
+
+#minsubox{
+  font-size: 30px !important;
+  color: #ffffff !important;
+  
 }
