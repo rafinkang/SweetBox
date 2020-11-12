@@ -817,6 +817,38 @@ figure.effect-goliath:hover p {
   margin-bottom: 70px;
 }
 
+.tm-section-9 .image-box1 img {
+  width: calc(47% - 8px);
+  height: 360px;
+  margin: 0px 10px;
+}
+
+.tm-section-9 .image-box2 img {
+  width: calc(19% - 8px);
+  height: 450px;
+  margin: 0 10px;
+}
+
+
+.tm-section-9 .image-box{
+  margin-top: 50px;
+}
+
+
+.tm-section-9 .tm-textbox {
+  margin: 40px 10px 0 10px;
+  padding: 30px;
+}
+.tm-section-9 .sub-title {
+  color: #f9f8ed;
+  font-size: 50px;
+}
+.tm-section-9 .desc {
+  font-size: 35px;
+  margin: 0;
+}
+
+
 .tm-section-10 .sub-title {
   color: #ef6759;
   font-size: 60px;
