@@ -120,4 +120,4 @@ def movie_detail(year):
 
 # for i in range(2015,2018):
 #     movie_detail(i)
-movie_detail(2018)
+movie_detail(2010)

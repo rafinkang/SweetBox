@@ -108,11 +108,11 @@ def make_date(start_date, end_date):
 
 
 # 날짜 잘 정해서 하세요.
-dateList = make_date('20000101', '20030101')
+dateList = make_date('20200101', '20201101')
 
 
-# for m_date in dateList:
-#     insert_boxoffice(m_date)
+for m_date in dateList:
+    insert_boxoffice(m_date)
     
-insert_boxoffice('20110310')
+# insert_boxoffice('20110310')
     
