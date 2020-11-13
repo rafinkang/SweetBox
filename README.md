@@ -37,6 +37,14 @@ DB 주소
 orcl.czq0cxsnbcns.ap-northeast-2.rds.amazonaws.com
 포트 1521
 
+EC2
+http://ec2-15-164-215-180.ap-northeast-2.compute.amazonaws.com:5000/
+
+실행방법
+export FLASK_APP=app.py
+printenv FLASK_APP
+app.py
+flask run --host=0.0.0.0
 
 
 
